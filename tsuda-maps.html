@@ -25,20 +25,21 @@
       }
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     }
+          L.marker([35.72290750217049, 139.46210807795433], {
+          icon: L.mapquest.icons.marker({
+            primaryColor: '#22407F',
+            secondaryColor: '#3B5998',
+            shadow: true,
+            size: 'md',
+            symbol: 'A'
+          })
+        })
+        .bindPopup('This is Tsudajuku University!')
+        .addTo(map);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU&callback=initMap"
     async defer></script>
-    L.marker([53.480759, -2.242631], {
-      icon: L.mapquest.icons.marker({
-      primaryColor: '#22407F',
-      secondaryColor: '#3B5998',
-      shadow: true,
-      size: 'md',
-      symbol: 'A'
-    })
-  })
-.bindPopup('This is Tsudajuku University!')
-.addTo(map);
+
   </body>
 </html>
 
