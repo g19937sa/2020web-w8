@@ -17,7 +17,7 @@
 
     <div id="map_canvas"></div>
     
-        <script>
+   <script>
     function initMap() {
       var myOptions = {
         zoom: 16,
@@ -26,7 +26,7 @@
         disableDefaultUI: true
       }
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-      
+      var L;
           L.marker([35.72290750217049, 139.46210807795433], {
           icon: L.mapquest.icons.marker({
             primaryColor: '#22407F',
