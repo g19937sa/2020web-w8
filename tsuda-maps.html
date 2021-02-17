@@ -10,26 +10,24 @@
         height: 600px;
       }
     </style>
-    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-    <script>
-      var L;
 
-      window.onload = function() {
-        L.mapquest.key = 'AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU';
+  </head>
+  <body>
+    <h1>Simple maps example</h1>
 
-        // 'map' refers to a <div> element with the ID map
-        var map = L.mapquest.map('map', {
-          center: [53.480759, -2.242631],
-          // 1. change 'map' to 'hybrid', try other type of map
-          layers: L.mapquest.tileLayer('hybrid'),
-          zoom: 12
-        });
-
-        // 2. Add control
-        map.addControl(L.mapquest.control());
-
-        // 3. Add icon
-        L.marker([35.72290750217049, 139.46210807795433], {
+    <div id="map_canvas"></div>
+    
+        <script>
+    function initMap() {
+      var myOptions = {
+        zoom: 16,
+        center: {lat: 35.72290750217049, lng: 139.46210807795433},
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        disableDefaultUI: true
+      }
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      
+          L.marker([35.72290750217049, 139.46210807795433], {
           icon: L.mapquest.icons.marker({
             primaryColor: '#22407F',
             secondaryColor: '#3B5998',
@@ -40,13 +38,9 @@
         })
         .bindPopup('This is Tsudajuku University!')
         .addTo(map);
-      }
-    </script>
-  </head>
-  <body>
-    <h1>Simple maps example</h1>
+    }
 
-    <div id="map_canvas"></div>
+    </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU&callback=initMap"
     async defer></script>
